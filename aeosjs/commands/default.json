@@ -1,0 +1,200 @@
+{
+  "commands": [
+    {
+      "commandFormat": "example reading",
+      "actions": [
+        "echo its-really-happening",
+        { "repeat":1,
+          "file":"c:\\aeos\\files.txt",
+          "actions":
+          [
+            "echo \"${file-data}\""
+          ]
+        },
+        "echo done!"
+      ]
+    },
+    {
+      "commandFormat": "example loop",
+      "actions": [
+        "echo its-really-happening",
+        { "repeat":5,
+          "actions":
+          [
+            "echo \"woohoo\"",
+            "echo \"yippee\"",
+            { "repeat":3,
+              "actions":
+              [
+                "echo \"fuckyeah\""
+              ]
+            }
+          ]
+        },
+        "echo done!"
+      ]
+    },
+    {
+      "commandFormat": "say ${first} and ${second}",
+      "actions": [
+        "echo ${first}",
+        "echo ${second}"
+      ]
+    },
+    {
+      "commandFormat": "test",
+      "actions": [
+        "wait 10 until slack-ui is visible",
+        "do a sine wave",
+        "echo yay!"
+      ]
+    },
+    {
+      "commandFormat": "examples",
+      "actions": [
+        "press command tab",
+        "press enter",
+        "do a sine wave",
+        "move mouse 0 0",
+        "click",
+        "echo \"My browser is ${browser}\"",
+        "say \"brett and shane\" and stuff",
+        "echo yay!"
+      ]
+    },
+    {
+      "commandFormat": "run ${program}",
+      "actions": [
+      "press command r",
+      "click on run-menu",
+      "press alt o",
+      "type ${program}",
+      "press enter"
+      ]
+    },
+    {
+      "commandFormat": "click on ${item}",
+      "actions": [
+      "wait 10 until ${item} is visible",
+      "move to ${item}",
+      "click"
+      ]
+    },
+    {
+      "commandFormat": "doubleclick on ${item}",
+      "actions": [
+      "wait 10 until ${item} is visible",
+      "move to ${item}",
+      "doubleclick"
+      ]
+    },
+    {
+      "commandFormat": "rightclick on ${item}",
+      "actions": [
+      "wait 10 until ${item} is visible",
+      "move to ${item}",
+      "rightclick"
+      ]
+    },
+    {
+      "commandFormat": "open browser",
+      "actions": [
+        { "try":
+            [
+              "wait 2 until chrome is visible"
+            ],
+          "catch":[
+              { "try":
+                [
+                  "click on chrome-icon"
+                ],
+              "catch":[
+                "press command",
+                "click on chrome-icon"
+                ]
+              }
+            ]
+          }
+      ]
+    },
+    {
+      "commandFormat": "open excel",
+      "actions": [
+        "press command",
+        "click on excel-icon",
+        "wait 10 until excel-taskbar-icon is visible",
+        "press escape",
+        "wait 10 until excel-cells is visible"
+      ]
+    },
+    {
+      "commandFormat": "open website ${website}",
+      "actions": [
+        "open browser",
+        "pause 1 seconds",
+        "press control t",
+        "wait 10 until url-bar is visible",
+        "type ${website}",
+        "press enter"
+      ]
+    },
+    {
+      "commandFormat": "open slack",
+      "actions": [
+        "press command",
+        "wait 10 until slack-icon is visible",
+        "click on slack-icon",
+        "wait 30 until slack-ui is visible"
+      ]
+    },
+    {
+      "commandFormat": "send me a screenshot",
+      "actions": [
+        "press printscreen",
+        "open slack",
+        "wait 30 until slack-ui is visible", 
+        "move to slack-sidebar", 
+        "scroll mousewheel -500",
+        "click on slack-shane",
+        "press control v",
+        "press enter",
+        "wait 30 until slack-upload is visible",
+        "click on slack-upload",
+        "click on slack-icon",
+        "echo \"screenshot sent!\""
+      ]
+    },
+    {
+      "commandFormat": "click on link ${linktext}",
+      "actions": [
+        "open browser",
+        "pause 1 seconds",
+        "press control f",
+        "wait 10 until chrome-find is visible", 
+        "pause 1 seconds",
+        "type ${linktext}",
+        "pause 1 seconds",
+        "press escape",
+        "pause 1 seconds",
+        "press enter"
+      ]
+    },
+    {
+      "commandFormat": "torrent ${movie}",
+      "actions": [
+        "open website 1337x.to",
+        "wait 30 until 1337 is visible",
+        "click on 1337-search", 
+        "type ${movie}", 
+        "press enter",
+        "wait 30 until ",
+        "press control v",
+        "press enter",
+        "wait 30 until slack-upload is visible",
+        "click on slack-upload",
+        "echo screenshot sent!"
+      ]
+    }
+    
+  ]
+}

@@ -1,0 +1,15 @@
+clipboard==0.0.4
+cycler==0.10.0
+matplotlib==1.5.3
+numpy==1.11.1
+opencv-python==3.1.0
+Pillow==3.3.1
+PyAutoGUI==0.9.33
+PyMsgBox==1.0.3
+pyparsing==2.1.9
+pyperclip==1.5.27
+PyScreeze==0.1.8
+python-dateutil==2.5.3
+PyTweening==1.0.3
+pytz==2016.6.1
+six==1.10.0
